@@ -13,7 +13,7 @@ type CreateContact struct {
 	// Email address of the user. Mandatory if \"SMS\" field is not passed in \"attributes\" parameter. Mobile Number in \"SMS\" field should be passed with proper country code. For example {\"SMS\":\"+91xxxxxxxxxx\"} or {\"SMS\":\"0091xxxxxxxxxx\"}
 	Email string `json:"email,omitempty"`
 	// Pass the set of attributes and their values. These attributes must be present in your SendinBlue account. For eg. {\"FNAME\":\"Elly\", \"LNAME\":\"Roger\"}
-	Attributes map[string]string `json:"attributes,omitempty"`
+	Attributes map[string]interface{} `json:"attributes,omitempty"`
 	// Set this field to blacklist the contact for emails (emailBlacklisted = true)
 	EmailBlacklisted bool `json:"emailBlacklisted,omitempty"`
 	// Set this field to blacklist the contact for SMS (smsBlacklisted = true)
